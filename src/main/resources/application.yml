@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: "jdbc:mysql://34.28.172.99/parcialTest?useSSL=false"
+    password: 12345
+    testOnBorrow: true
+    max-wait: 8000
+  jpa:
+    defer-datasource-initialization: true
+    show-sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate:
+          format_sql: 'true'
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  sql:
+    init:
+      mode: always
+server:
+  port: '8081'
