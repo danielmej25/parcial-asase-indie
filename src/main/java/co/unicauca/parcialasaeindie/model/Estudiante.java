@@ -18,6 +18,6 @@ public class Estudiante extends Persona{
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "estudiante")
     private List<Telefono> telefonos;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "idEstudiante")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "estudiante")
     private Direccion direccion;
 }

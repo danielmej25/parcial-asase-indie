@@ -11,12 +11,12 @@ import jakarta.persistence.*;
 public class Direccion{
     @Id
     @Column(name = "id_persona")
-    private Integer id;
+    private int id;
 
     @MapsId
     @OneToOne
     @JoinColumn(name = "id_persona")
-    private Estudiante idEstudiante;
+    private Estudiante estudiante;
 
     @Column(length = 30, nullable = false)
     private String direccionResidencia;
