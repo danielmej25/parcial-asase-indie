@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.0.0'
 	id 'io.spring.dependency-management' version '1.1.0'
+	id "org.sonarqube" version "3.5.0.2730"
 }
 
 group = 'co.unicauca'
@@ -30,4 +31,12 @@ dependencies {
 	annotationProcessor('org.mapstruct:mapstruct-processor:1.5.3.Final')
 	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
 	implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+}
+
+sonarqube {
+	properties {
+		property "sonar.projectKey", "parcial-indie"
+		property "sonar.organization", "parcial-indie"
+		property "sonar.host.url", "https://sonarcloud.io"
+	}
 }

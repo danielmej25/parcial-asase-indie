@@ -1,6 +1,5 @@
 package co.unicauca.parcialasaeindie.model;
 
-import com.fasterxml.jackson.databind.JsonSerializable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
