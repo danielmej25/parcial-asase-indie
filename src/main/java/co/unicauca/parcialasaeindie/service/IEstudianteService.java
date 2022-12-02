@@ -8,4 +8,5 @@ public interface IEstudianteService {
     EstudianteDTO save(EstudianteDTO estudianteDTO);
     EstudianteDTO findById(int id);
     List<EstudianteDTO> findAll();
+    void deleteById(int id);
 }
