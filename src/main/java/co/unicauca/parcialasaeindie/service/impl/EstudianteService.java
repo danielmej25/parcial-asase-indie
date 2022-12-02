@@ -34,4 +34,9 @@ public class EstudianteService implements IEstudianteService {
     public List<EstudianteDTO> findAll() {
         return estudianteMapper.entityListToDtoList(estudianteRepository.findAll());
     }
+
+    @Override
+    public void deleteById(int id) {
+        estudianteRepository.deleteById(id);
+    }
 }

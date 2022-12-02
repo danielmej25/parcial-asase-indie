@@ -27,4 +27,7 @@ public class EstudianteController {
     public EstudianteDTO findById(@PathVariable int id){
         return estudianteService.findById(id);
     }
+
+    @DeleteMapping("{id}")
+    public void deleteById(@PathVariable int id){estudianteService.deleteById(id);}
 }
