@@ -15,7 +15,9 @@ public abstract class EstudianteMapper {
 
     @AfterMapping
     protected void asignarEstudiante(@MappingTarget Estudiante estudiante) {
-        estudiante.getDireccion().setEstudiante(estudiante);
+        if(estudiante.getDireccion() != null){
+            estudiante.getDireccion().setEstudiante(estudiante);
+        }
         if(estudiante.getTelefonos() != null){
             estudiante.getTelefonos().forEach(telefono -> telefono.setEstudiante(estudiante));
         }
