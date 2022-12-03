@@ -22,4 +22,9 @@ public class CursoService implements ICursoService {
         curso.setAsignatura(asignaturaRepository.findById(cursoDTO.getAsignatura().getId()).orElse(curso.getAsignatura()));
         return cursoMapper.entityToDto(cursoRepository.save(curso));
     }
+
+    @Override
+    public CursoDTO findById(int id) {
+        return cursoMapper.entityToDto(cursoRepository.findById(id).orElse(null));
+    }
 }
