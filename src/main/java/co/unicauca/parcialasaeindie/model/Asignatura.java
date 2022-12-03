@@ -3,6 +3,8 @@ package co.unicauca.parcialasaeindie.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.List;
 
@@ -22,6 +24,12 @@ public class Asignatura {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "asignatura")
     private List<Curso> cursos;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "asignaturas", cascade = CascadeType.ALL)
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
+    @JoinTable(
+            name = "docentes_asignaturas",
+            joinColumns = @JoinColumn(name = "id_asignatura"),
+            inverseJoinColumns = @JoinColumn(name = "id_persona"))
     private List<Docente> docentes;
 }
