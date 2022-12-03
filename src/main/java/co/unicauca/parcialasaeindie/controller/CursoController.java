@@ -1,7 +1,6 @@
 package co.unicauca.parcialasaeindie.controller;
 
 import co.unicauca.parcialasaeindie.model.dto.CursoDTO;
-import co.unicauca.parcialasaeindie.model.dto.EstudianteDTO;
 import co.unicauca.parcialasaeindie.service.ICursoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

@@ -4,10 +4,7 @@ import co.unicauca.parcialasaeindie.model.dto.AsignaturaDTO;
 import co.unicauca.parcialasaeindie.service.IAsignaturaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -17,5 +14,10 @@ public class AsignaturaController {
     @PostMapping
     public AsignaturaDTO save(@RequestBody AsignaturaDTO asignaturaDTO){
         return asignaturaService.save(asignaturaDTO);
+    }
+
+    @GetMapping("/{id}")
+    public AsignaturaDTO findById(@PathVariable int id){
+        return asignaturaService.findById(id);
     }
 }

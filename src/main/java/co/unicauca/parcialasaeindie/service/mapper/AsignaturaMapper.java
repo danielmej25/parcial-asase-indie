@@ -1,7 +1,9 @@
 package co.unicauca.parcialasaeindie.service.mapper;
 
 import co.unicauca.parcialasaeindie.model.Asignatura;
+import co.unicauca.parcialasaeindie.model.Docente;
 import co.unicauca.parcialasaeindie.model.dto.AsignaturaDTO;
+import co.unicauca.parcialasaeindie.model.dto.DocenteDTO;
 import org.mapstruct.*;
 
 import java.util.List;
@@ -23,6 +25,9 @@ public abstract class AsignaturaMapper {
     public abstract Asignatura dtoToEntity(AsignaturaDTO dto);
 
     public abstract List<AsignaturaDTO> entityToDto(List<Asignatura> entityList);
+
+    @Mapping(target = "asignaturas", ignore = true)
+    public abstract DocenteDTO docenteToDocenteDTO(Docente docente);
 }
 
 
