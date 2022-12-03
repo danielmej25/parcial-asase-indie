@@ -25,7 +25,7 @@ public class Docente extends Persona{
     @Column(nullable = false)
     private float salario;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @Fetch(value = FetchMode.SUBSELECT)
     @JoinTable(
             name = "docentes_asignaturas",

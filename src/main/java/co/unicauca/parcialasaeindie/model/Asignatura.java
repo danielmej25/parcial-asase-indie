@@ -22,6 +22,6 @@ public class Asignatura {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "asignatura")
     private List<Curso> cursos;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "asignaturas")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "asignaturas", cascade = CascadeType.ALL)
     private List<Docente> docentes;
 }
