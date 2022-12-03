@@ -30,4 +30,9 @@ public class EstudianteController {
 
     @DeleteMapping("{id}")
     public void deleteById(@PathVariable int id){estudianteService.deleteById(id);}
+
+    @PutMapping("/{id}")
+    public EstudianteDTO update(@PathVariable int id, @RequestBody EstudianteDTO estudianteDTO){
+        return estudianteService.update(id, estudianteDTO);
+    }
 }
