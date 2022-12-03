@@ -23,7 +23,8 @@ public abstract class EstudianteMapper {
         }
     }
 
-    @Mapping(target = "telefonos.estudiante",ignore = true)
+    @Mapping(target = "telefonos",ignore = true)
+    @Mapping(target = "direccion",ignore = true)
     public abstract EstudianteDTO entityToDto(Estudiante entity);
 
     public abstract Estudiante dtoToEntity(EstudianteDTO dto);
